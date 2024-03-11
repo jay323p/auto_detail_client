@@ -1,0 +1,650 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.slideShow {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+
+  to {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+@keyframes growNoFade {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
+@keyframes shrinkPop {
+  from {
+    transform: scale(0.8);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
+@keyframes wobble {
+  from {
+    transform: rotate(10deg);
+  }
+
+  to {
+    transform: rotate(-10deg);
+  }
+}
+@keyframes wobbleLess {
+  from {
+    transform: rotate(4deg);
+  }
+
+  to {
+    transform: rotate(-4deg);
+  }
+}
+@keyframes roll {
+  from {
+    transform: translateX(-20px);
+  }
+
+  to {
+    transform: translateX(5px);
+  }
+}
+@keyframes slide {
+  from {
+    transform: translateX(0px);
+  }
+
+  to {
+    transform: translateX(-2000px);
+  }
+}
+@keyframes slideLeft {
+  from {
+    transform: translateX(2000px);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
+}
+@keyframes slideReverse {
+  from {
+    transform: translateX(0px);
+  }
+
+  to {
+    transform: translateX(2000px);
+  }
+}
+@keyframes slideRight {
+  from {
+    transform: translateX(-2000px);
+  }
+
+  to {
+    transform: translateX(0px);
+  }
+}
+@keyframes growSlight {
+  from {
+    transform: scale(0.9);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
+@keyframes rotateCardY {
+  from {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+
+  to {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
+@keyframes rotateCardX {
+  from {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+
+  to {
+    transform: rotate3d(1, 0, 0, 360deg);
+  }
+}
+@keyframes fadeAway {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@keyframes changeBg {
+  from {
+    background: linear-gradient(to top left, #00c0ff, #4218b8);
+    opacity: 1;
+  }
+
+  to {
+    background: linear-gradient(to top left, #00c0ff, #4218b8);
+    opacity: 0.3;
+    transform: scale(1.05);
+  }
+}
+
+.activeImg {
+  animation-duration: 4s;
+  animation-name: grow;
+  animation-iteration-count: infinite;
+  /* animation-direction: alternate; */
+  /* animation-duration: 1s; */
+}
+
+.slideDone {
+  animation-duration: 4s;
+  animation-name: growNoFade;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.btnAnimate1 {
+  transform: scale(1.3);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.btnAnimate1:hover {
+  transform: scale(1.45);
+  border-radius: 1rem;
+  opacity: 1;
+}
+
+.navFont {
+  font-family: 'Montserrat', sans-serif;
+  color: #2e4f6a;
+}
+
+.montFont {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navLink:hover {
+  animation-duration: 1s;
+  animation-name: wobbleLess;
+  animation-iteration-count: infinite;
+}
+
+.navModalLink:hover {
+  opacity: 0.5;
+  background-color: black;
+}
+
+.navSubLink:hover {
+  background-color: white;
+  color: #2e4f6a;
+  transform: scale(1.05);
+}
+
+.jiggle:hover {
+  animation-duration: 0.3s;
+  animation-name: wobble;
+  animation-iteration-count: infinite;
+  /* animation-direction: alternate; */
+}
+
+.inputIcons i {
+  position: absolute;
+  border: 1px solid #2e4f6a;
+  border-radius: 100%;
+  background-color: #2e4f6a;
+}
+
+/* @media only screen and (min-width: 750px) {
+  .fixGridRow {
+    grid-template-rows: repeat(6, 250px);
+  }
+} */
+@media only screen and (min-width: 570px) {
+  .inputIcons i {
+    right: 40px;
+  }
+}
+@media only screen and (min-width: 420px) {
+  .translateFix {
+    transform: translateY(-40px) !important;
+  }
+}
+@media only screen and (min-width: 480px) {
+  .translateFix {
+    transform: translateY(-20px) !important;
+  }
+}
+@media only screen and (min-width: 540px) {
+  .translateFix {
+    transform: translateY(0px) !important;
+  }
+}
+
+.inputIcons {
+  width: 100%;
+}
+
+.cartIcon:hover {
+  animation-duration: 1s;
+  animation-name: roll;
+  animation-iteration-count: 1;
+}
+.accountIcon:hover {
+  animation-duration: 1s;
+  animation-name: growSlight;
+  animation-iteration-count: infinite;
+}
+
+.searchIcon:hover {
+  animation-duration: 1s;
+  animation-name: grow;
+  animation-iteration-count: infinite;
+}
+.readBtn {
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.readBtn:hover {
+  background-color: rgba(46, 79, 106, 0.7);
+}
+.getStartedBtn {
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.getStartedBtn:hover {
+  background-color: rgba(204, 182, 134, 0.7);
+}
+.insetShadow {
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.hoverShadowBlue:hover {
+  box-shadow: rgba(46, 79, 106, 0.17) 0px -23px 25px 0px inset,
+    rgba(46, 79, 106, 0.15) 0px -36px 30px 0px inset,
+    rgba(46, 79, 106, 0.1) 0px -79px 40px 0px inset,
+    rgba(46, 79, 106, 0.06) 0px 2px 1px, rgba(46, 79, 106, 0.09) 0px 4px 2px,
+    rgba(46, 79, 106, 0.09) 0px 8px 4px, rgba(46, 79, 106, 0.09) 0px 16px 8px,
+    rgba(46, 79, 106, 0.09) 0px 32px 16px;
+  transition: all 0.3s ease-in-out;
+}
+.insetShadowBlue {
+  box-shadow: rgba(46, 79, 106, 0.17) 0px -23px 25px 0px inset,
+    rgba(46, 79, 106, 0.15) 0px -36px 30px 0px inset,
+    rgba(46, 79, 106, 0.1) 0px -79px 40px 0px inset,
+    rgba(46, 79, 106, 0.06) 0px 2px 1px, rgba(46, 79, 106, 0.09) 0px 4px 2px,
+    rgba(46, 79, 106, 0.09) 0px 8px 4px, rgba(46, 79, 106, 0.09) 0px 16px 8px,
+    rgba(46, 79, 106, 0.09) 0px 32px 16px;
+}
+.insetShadow2 {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.insetShadow2Blue {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(46, 79, 106, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.slidePointer:hover {
+  animation-duration: 1s;
+  animation-name: shrinkPop;
+  animation-iteration-count: infinite;
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  display: none;
+}
+
+.blueLine {
+  border: 1px solid #2e4f6a;
+}
+
+.green_gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(79, 194, 157, 1) 0%,
+    rgba(79, 194, 157, 0.4) 100%
+  );
+  filter: blur(123px);
+}
+.darkGreen_gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(75, 167, 141, 1),
+    rgba(75, 167, 141, 0.4)
+  );
+  filter: blur(400px);
+}
+.white_gradient {
+  background: rgba(255, 255, 255, 0.6);
+  filter: blur(900px);
+}
+
+.darkerGreen_gradient {
+  background: linear-gradient(90deg, #556b2f 0%, rgb(54, 83, 53) 100%);
+  filter: blur(123px);
+}
+
+.imgGrow {
+  animation-duration: 4s;
+  animation-name: grow;
+  animation-iteration-count: infinite;
+}
+.slideCard {
+  animation-duration: 0.7s;
+  animation-name: slide;
+  animation-iteration-count: 1;
+}
+.slideCardFromRight {
+  animation-duration: 0.7s;
+  animation-name: slideLeft;
+  animation-iteration-count: 1;
+}
+.slideCardReverse {
+  animation-duration: 0.7s;
+  animation-name: slideReverse;
+  animation-iteration-count: 1;
+}
+.slideCardFromLeft {
+  animation-duration: 0.7s;
+  animation-name: slideRight;
+  animation-iteration-count: 1;
+}
+
+/* .rotateCard {
+  animation-duration: 1.5s;
+  animation-name: rotateCardY;
+  animation-iteration-count: 1;
+}
+.rotateCardX {
+  animation-duration: 1.5s;
+  animation-name: rotateCardX;
+  animation-iteration-count: 1;
+} */
+
+.greyBorder {
+  border: 1px solid #e5e5e5;
+}
+.boxShadow1 {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.roundedBtmBorder {
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+}
+.transform1 {
+  transform: scale(1.2);
+}
+.fade {
+  animation-duration: 0.7s;
+  animation-name: fadeAway;
+  animation-iteration-count: 1;
+}
+
+.fadeIn {
+  animation-duration: 0.7s;
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
+}
+
+/* .card:hover {
+  transform: rotate3d(2, 1, 1, 360deg);
+  transition: all 1s ease-in-out;
+} */
+/* can create card flip animation later using js and ^^ */
+.wrapper {
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+.background {
+  transform: translateZ(-10px) scale(2);
+}
+.foreground {
+  transform: translateZ(-5px) scale(1.5);
+  opacity: 0.1;
+}
+
+.background,
+.foreground {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.title {
+  color: white;
+  text-shadow: 0 0 5px black;
+}
+
+.section {
+  font-size: 16px;
+  padding: 1rem;
+  background-color: transparent;
+  color: white;
+  transform: translateY(100%);
+}
+
+.bgImg::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  backdrop-filter: blur(1px);
+}
+
+.redTextHover:hover {
+  color: #e81c2e;
+}
+
+.changeBg {
+  animation-duration: 1.7s;
+  animation-name: changeBg;
+  animation-iteration-count: infinite;
+}
+
+.packageGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.shadowHover:hover {
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  transition: 0.1s all ease-in-out;
+}
+/* ---------------------------------------- CALENDAR ------------------------------------ */
+
+/* area select */
+select {
+  /* Reset Select */
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: #fff;
+  background-color: var(--darkgray);
+  background-image: none;
+  cursor: pointer;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.areaSelect {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 2.6em;
+  border-radius: 0.25em;
+  overflow: hidden;
+}
+/* Arrow */
+.areaSelect::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.8em;
+  background-color: #19191b;
+  transition: 0.25s all ease;
+  pointer-events: none;
+}
+/* Transition */
+.areaSelect:hover::after {
+  color: #2e4f6a;
+}
+
+input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #2e4f6a;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #2e4f6a;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #2e4f6a;
+}
+
+.fixGridRows {
+  grid-template-rows: repeat(3, 200px);
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #e81c2e;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 22px;
+  width: 24px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #39db98;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #39db98;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
