@@ -243,8 +243,13 @@ const Authentication = () => {
                                     <FaTwitterSquare size={'30px'} className='text-twitter cursor-pointer' />
                                 </div>
                             </div>
+                            <div className='h-[5%] w-full bg-brilliantBlue bg-opacity-20 flex justify-evenly items-center rounded-md montFont'>
+                                <h1>Admin Portal</h1>
+                                <button className='h-[76%] w-[50%] bg-green-400 rounded-md bg-opacity-60 hover:bg-opacity-100 cursor-pointer' onClick={() => navigate("/adminAuthentication")}>Go</button>
+                            </div>
                         </div>
                     </div>
+                    <div className='min-h-full w-1/3 absolute right-0 bg-darkBlue insetShadow'></div>
 
                 </>}
         </div>
