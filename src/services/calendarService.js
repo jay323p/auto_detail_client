@@ -3,7 +3,7 @@ import axios from 'axios';
 // GET CALENDAR
 export const getCalendarDates = async () => {
   const response = await axios.get(
-    'http://localhost:5000/api/calendar/getCalendar',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/calendar/getCalendar',
     { withCredentials: true }
   );
 
@@ -15,7 +15,7 @@ export const getCalendarDates = async () => {
 // UPDATE CALENDAR TO TODAY
 export const updateCalendarStartingDate = async (calendarId) => {
   const response = await axios.post(
-    'http://localhost:5000/api/calendar/updateDateToToday',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/calendar/updateDateToToday',
     calendarId,
     { withCredentials: true }
   );
@@ -28,7 +28,7 @@ export const updateCalendarStartingDate = async (calendarId) => {
 // INIT CALENDAR IF NONE & STARTING SERVICE
 export const initCalendar = async () => {
   const response = await axios.get(
-    'http://localhost:5000/api/calendar/initCalendar',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/calendar/initCalendar',
     { withCredentials: true }
   );
 
@@ -40,7 +40,7 @@ export const initCalendar = async () => {
 // RESERVE TIME SLOT
 export const reserveTimeSlotForUser = async (slot) => {
   const response = await axios.patch(
-    'http://localhost:5000/api/calendar/reserveTimeSlot',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/calendar/reserveTimeSlot',
     slot,
     { withCredentials: true }
   );
@@ -53,7 +53,7 @@ export const reserveTimeSlotForUser = async (slot) => {
 // UNRESERVE TIME SLOT
 export const unreserveTimeSlotForUser = async (slot) => {
   const response = await axios.patch(
-    'http://localhost:5000/api/calendar/unreserveTimeSlot',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/calendar/unreserveTimeSlot',
     slot,
     { withCredentials: true }
   );

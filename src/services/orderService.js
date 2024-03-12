@@ -3,7 +3,7 @@ import axios from 'axios';
 // POST SUBMIT ORDER
 export const submitUserOrder = async (orderData) => {
   const response = await axios.post(
-    'http://localhost:5000/api/order/submitOrder',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/order/submitOrder',
     orderData,
     { withCredentials: true }
   );
@@ -16,7 +16,7 @@ export const submitUserOrder = async (orderData) => {
 // GET UNCOMPLETED USER ORDER
 export const getUserOrders = async () => {
   const response = await axios.get(
-    'http://localhost:5000/api/order/getUserOrders',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/order/getUserOrders',
     { withCredentials: true }
   );
 
@@ -28,7 +28,7 @@ export const getUserOrders = async () => {
 // GET COMPLETED USER ORDER
 export const getArchivedUserOrders = async () => {
   const response = await axios.get(
-    'http://localhost:5000/api/order/getCompletedUserOrders',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/order/getCompletedUserOrders',
     { withCredentials: true }
   );
 
@@ -40,7 +40,7 @@ export const getArchivedUserOrders = async () => {
 // DELETE USER ORDER
 export const deleteUserOrderChosen = async (data) => {
   const response = await axios.patch(
-    'http://localhost:5000/api/order/deleteOrder',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/order/deleteOrder',
     data,
     { withCredentials: true }
   );
@@ -53,7 +53,7 @@ export const deleteUserOrderChosen = async (data) => {
 // UPDATE USER ORDER
 export const updateUserOrderChosen = async (data) => {
   const response = await axios.patch(
-    'http://localhost:5000/api/order/editOrder',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/order/editOrder',
     data,
     { withCredentials: true }
   );
@@ -66,7 +66,7 @@ export const updateUserOrderChosen = async (data) => {
 // GET ALL CUSTOMER ORDERS (ADMIN) -> returns completed and uncompleted customer orders
 export const getEveryOrder = async () => {
   const response = await axios.get(
-    'http://localhost:5000/api/order/getAllCustomerOrders',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/order/getAllCustomerOrders',
     { withCredentials: true }
   );
 
@@ -78,7 +78,7 @@ export const getEveryOrder = async () => {
 // GET SINGLE CUSTOMER ORDER (ADMIN)
 export const getSingleCustomerOrder = async (data) => {
   const response = await axios.post(
-    'http://localhost:5000/api/order/getSingleCustomerOrder',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/order/getSingleCustomerOrder',
     data,
     { withCredentials: true }
   );
@@ -91,7 +91,7 @@ export const getSingleCustomerOrder = async (data) => {
 // COMPLETE USER ORDER
 export const completeUserOrder = async (data) => {
   const response = await axios.patch(
-    'http://localhost:5000/api/order/completeUserOrder',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/order/completeUserOrder',
     data,
     { withCredentials: true }
   );

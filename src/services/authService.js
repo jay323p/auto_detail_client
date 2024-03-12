@@ -1,9 +1,12 @@
 import axios from 'axios';
 
+// PRODUCTION === https://auto-detail-server-336dae0010f9.herokuapp.com
+// DEVELOPMENT === http://localhost:5000
+
 // REGISTER USER
 export const registerUser = async (userData) => {
   const response = await axios.post(
-    'http://localhost:5000/api/users/register',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/register',
     userData,
     { withCredentials: true }
   );
@@ -16,7 +19,7 @@ export const registerUser = async (userData) => {
 // REGISTER ADMIN
 export const registerAdmin = async (userData) => {
   const response = await axios.post(
-    'http://localhost:5000/api/users/registerAdmin',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/registerAdmin',
     userData,
     { withCredentials: true }
   );
@@ -30,7 +33,7 @@ export const registerAdmin = async (userData) => {
 // LOGIN USER
 export const loginUser = async (userData) => {
   const response = await axios.post(
-    'http://localhost:5000/api/users/login',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/login',
     userData,
     { withCredentials: true }
   );
@@ -44,7 +47,7 @@ export const loginUser = async (userData) => {
 // LOGIN ADMIN
 export const loginAdmin = async (userData) => {
   const response = await axios.post(
-    'http://localhost:5000/api/users/loginAdmin',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/loginAdmin',
     userData,
     { withCredentials: true }
   );
@@ -58,7 +61,7 @@ export const loginAdmin = async (userData) => {
 // RESET USER PASSWORD
 export const resetUserPassword = async (userData) => {
   const response = await axios.patch(
-    'http://localhost:5000/api/users/resetPassword',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/resetPassword',
     userData,
     { withCredentials: true }
   );
@@ -72,7 +75,7 @@ export const resetUserPassword = async (userData) => {
 // FORGOT PASSWORD
 export const userForgotPassword = async (userData) => {
   const response = await axios.post(
-    'http://localhost:5000/api/users/forgotpass',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/forgotpass',
     userData
   );
 
@@ -85,7 +88,7 @@ export const userForgotPassword = async (userData) => {
 // RESET PASSWORD FROM EMAIL LINK
 export const resetPassFromEmailLink = async (userData, resetToken) => {
   const response = await axios.put(
-    `http://localhost:5000/api/users/resetPasswordEmail/${resetToken}`,
+    `https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/resetPasswordEmail/${resetToken}`,
     userData
   );
 
@@ -98,7 +101,7 @@ export const resetPassFromEmailLink = async (userData, resetToken) => {
 // SEND EMAIL VERIFICATION LINK
 export const sendEmailVerificationLink = async (userData) => {
   const response = await axios.post(
-    'http://localhost:5000/api/users/sendEmailVerification',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/sendEmailVerification',
     userData
   );
 
@@ -111,7 +114,7 @@ export const sendEmailVerificationLink = async (userData) => {
 // VERIFY USER EMAIL
 export const verifyEmailLink = async (emailVerifyToken) => {
   const response = await axios.put(
-    `http://localhost:5000/api/users/verifyEmail/${emailVerifyToken}`
+    `https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/verifyEmail/${emailVerifyToken}`
   );
 
   if (response.statusText === 'OK') {
@@ -123,7 +126,7 @@ export const verifyEmailLink = async (emailVerifyToken) => {
 // GET EMAIL VERIFICATION
 export const getEmailVerificationFromDb = async (userData) => {
   const response = await axios.post(
-    `http://localhost:5000/api/users/getEmailVerification`,
+    `https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/getEmailVerification`,
     userData,
     { withCredentials: true }
   );
@@ -137,7 +140,7 @@ export const getEmailVerificationFromDb = async (userData) => {
 // GET CLIENT EMAIL VERIFICATION (ADMIN PROTECT)
 export const getClientEmailVerificationFromDb = async (userData) => {
   const response = await axios.post(
-    `http://localhost:5000/api/users/getClientEmailVerification`,
+    `https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/getClientEmailVerification`,
     userData,
     { withCredentials: true }
   );
@@ -151,7 +154,7 @@ export const getClientEmailVerificationFromDb = async (userData) => {
 // EDIT USER PROFILE
 export const editUserProfile = async (userData) => {
   const response = await axios.patch(
-    'http://localhost:5000/api/users/editUserProfile',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/editUserProfile',
     userData,
     { withCredentials: true }
   );
@@ -166,7 +169,7 @@ export const editUserProfile = async (userData) => {
 export const logoutUser = async () => {
   try {
     const response = await axios.get(
-      'http://localhost:5000/api/users/logoutUser',
+      'https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/logoutUser',
       { withCredentials: true }
     );
 
@@ -187,7 +190,7 @@ export const logoutUser = async () => {
 export const getLoginStatus = async () => {
   try {
     const response = await axios.get(
-      'http://localhost:5000/api/users/loginStatus',
+      'https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/loginStatus',
       { withCredentials: true }
     );
 
@@ -206,7 +209,7 @@ export const getLoginStatus = async () => {
 export const getAllUserContactInfo = async () => {
   try {
     const response = await axios.get(
-      'http://localhost:5000/api/users/getAllUserContactInfo',
+      'https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/getAllUserContactInfo',
       { withCredentials: true }
     );
 
@@ -225,7 +228,7 @@ export const getAllUserContactInfo = async () => {
 // UPLOAD PHOTOS ADMIN
 export const uploadGalleryPhotosAdmin = async (formData) => {
   const response = await axios.post(
-    'http://localhost:5000/api/users/uploadPhotosAdmin',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/uploadPhotosAdmin',
     formData,
     { withCredentials: true }
   );
@@ -239,7 +242,7 @@ export const uploadGalleryPhotosAdmin = async (formData) => {
 // GET ALL PHOTOS FROM CLOUDINARY
 export const getAllPhotosFromCloud = async () => {
   const response = await axios.get(
-    'http://localhost:5000/api/users/getImagesFromCloud',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/getImagesFromCloud',
     { withCredentials: true }
   );
 
@@ -252,7 +255,7 @@ export const getAllPhotosFromCloud = async () => {
 // GET PAGINATED GALLERY IMGS
 export const getPaginatedGalleryImages = async (pageNum, filter) => {
   const response = await axios.get(
-    `http://localhost:5000/api/users/getPaginatedGalleryImages?page=${pageNum}&filter=${filter}`,
+    `https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/getPaginatedGalleryImages?page=${pageNum}&filter=${filter}`,
     { withCredentials: true }
   );
 
@@ -265,7 +268,7 @@ export const getPaginatedGalleryImages = async (pageNum, filter) => {
 // GET PAGINATED GALLERY IMGS
 export const deleteImgFromCloudAndDb = async (id) => {
   const response = await axios.delete(
-    `http://localhost:5000/api/users/deleteImg?imgId=${id}`,
+    `https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/deleteImg?imgId=${id}`,
     { withCredentials: true }
   );
 
@@ -278,7 +281,7 @@ export const deleteImgFromCloudAndDb = async (id) => {
 // REQUEST MORE INFO
 export const requestMoreInfoFromUser = async (userData) => {
   const response = await axios.post(
-    `http://localhost:5000/api/users/requestInfo`,
+    `https://auto-detail-server-336dae0010f9.herokuapp.com/api/users/requestInfo`,
     userData,
     { withCredentials: true }
   );

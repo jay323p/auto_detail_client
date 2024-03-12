@@ -3,7 +3,7 @@ import axios from 'axios';
 // QUICK REVIEW IMAGE UPLOAD
 export const quickReviewImageUpload = async (imgData) => {
   const response = await axios.post(
-    'http://localhost:5000/api/reviews/quickImageUpload',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/reviews/quickImageUpload',
     imgData,
     { withCredentials: true }
   );
@@ -17,7 +17,7 @@ export const quickReviewImageUpload = async (imgData) => {
 // QUICK REVIEW IMAGE DELETE
 export const quickReviewImageDelete = async (imgData) => {
   const response = await axios.post(
-    'http://localhost:5000/api/reviews/quickDeleteImage',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/reviews/quickDeleteImage',
     imgData,
     { withCredentials: true }
   );
@@ -31,7 +31,7 @@ export const quickReviewImageDelete = async (imgData) => {
 // SUBMIT REVIEW
 export const submitUserReview = async (reviewData) => {
   const response = await axios.post(
-    'http://localhost:5000/api/reviews/submitReview',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/reviews/submitReview',
     reviewData,
     { withCredentials: true }
   );
@@ -45,7 +45,7 @@ export const submitUserReview = async (reviewData) => {
 // GET ALL REVIEWS
 export const getAllUserReviews = async () => {
   const response = await axios.get(
-    'http://localhost:5000/api/reviews/getReviews',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/reviews/getReviews',
     { withCredentials: true }
   );
 
@@ -58,7 +58,7 @@ export const getAllUserReviews = async () => {
 // DELETE REVIEW ADMIN
 export const deleteUserReview = async (id) => {
   const response = await axios.patch(
-    'http://localhost:5000/api/reviews/deleteReviewAdmin',
+    'https://auto-detail-server-336dae0010f9.herokuapp.com/api/reviews/deleteReviewAdmin',
     id,
     { withCredentials: true }
   );
