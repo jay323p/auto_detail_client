@@ -9,7 +9,7 @@ Automatic and manual slideshow utilized to showcase detailing business' skills, 
 ## More Details Page
 Simply designed page detailing more information about the practices and booking methods of the detailing company.
 
-![landing Page](src/assets/more-info.png)
+![landing Page](src/assets/more_info.png)
 
 ## Booking Options Page
 Contains all detailing options available as a sliding card that contains both a picture of the detailing process as well as information about what the detailing option provides in service.
